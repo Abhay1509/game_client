@@ -21,10 +21,11 @@ function App() {
     fetchData();
   };
 
+ 
   const postData = async () => {
     try {
       const response = await axios.post("http://172.16.2.119:5173/addNewRow", {
-        name: "Sanchit",
+        name: "Abhi",
         age: 27,
       });
       console.log(response.data);
@@ -35,10 +36,14 @@ function App() {
     }
   };
 
+  // useEffect(()=> {
+  //   showDataHandler();
+  // },[data]);
+
   return (
     <>
       <div>
-        <h2>Previous Data</h2>
+        <h2>Data</h2>
         <ul>
           {data.map((item, index) => (
             <li key={index}>
