@@ -28,7 +28,6 @@ function App() {
         name: "Abhi",
         age: 27,
       });
-      console.log(response.data);
       console.log(data);
       setData([...data, response.data]);
     } catch (error) {
