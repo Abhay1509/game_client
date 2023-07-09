@@ -21,19 +21,25 @@ function App() {
     fetchData();
   };
 
+  
  
   const postData = async () => {
     try {
       const response = await axios.post("http://172.16.2.119:5173/addNewRow", {
         name: "Abhi",
-        age: 27,
+        age: 20,
       });
+      fetchData();
       console.log(data);
       setData([...data, response.data]);
     } catch (error) {
       console.error(error);
     }
   };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, [postData]);
 
   // useEffect(()=> {
   //   showDataHandler();
