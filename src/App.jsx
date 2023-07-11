@@ -9,7 +9,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://172.16.2.119:5173/getAllCollections"
+        "http://192.168.69.13:5173/getAllCollections"
       );
       setData(response.data);
     } catch (error) {
@@ -25,13 +25,14 @@ function App() {
  
   const postData = async () => {
     try {
-      const response = await axios.post("http://172.16.2.119:5173/addNewRow", {
-        name: "Abhi",
-        age: 20,
+      const response = await axios.post("http://192.168.69.13:5173/addNewRow", {
+        name: "rakesh",
+        age: 110,
       });
-      fetchData();
-      console.log(data);
-      setData([...data, response.data]);
+      // fetchData();
+      console.log(response.data);
+      // setData([...data, response.data]);
+      setData(response.data.message)
     } catch (error) {
       console.error(error);
     }
